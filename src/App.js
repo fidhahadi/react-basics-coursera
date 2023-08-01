@@ -12,7 +12,7 @@ return (
         <Card h2="Second card's h2" h3="Second card's h3" />
         <Card h2="Third card's h2" h3="Third card's h3" />
         <Btn />
-        <Child message={date.toLocaleDateString()}/>
+        <Child message={date.toLocaleDateString()} messag={date.toLocaleTimeString()}/>
     </div>
   );
 };
