@@ -1,10 +1,11 @@
 import "./App.css";
 import Card from "./Card";
 import Btn from "./Btn";
-import Child from "./Child"
+import Usestatecomp from "./Usestatecomp";
 
 function App() {
-    const date = new Date();
+    // const date = new Date();
+
 return (
     <div className="App">
         <h1>Task: Add three Card elements</h1>
@@ -12,7 +13,7 @@ return (
         <Card h2="Second card's h2" h3="Second card's h3" />
         <Card h2="Third card's h2" h3="Third card's h3" />
         <Btn />
-        <Child message={date.toLocaleDateString()} messag={date.toLocaleTimeString()}/>
+        <Usestatecomp />
     </div>
   );
 };
