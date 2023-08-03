@@ -1,6 +1,7 @@
 import "./App.css";
 import { ThemeProvider, useTheme } from "./ThemeContext";
 import Switch from "./Switch";
+import { useState } from "react";
 // import Contact from "./Contact";
 // import Homepage from "./Homepage";
 // import AboutLittleLemon from "./AboutLittleLemon";
@@ -85,6 +86,12 @@ function App() {
     //     <Usestatecomp />
     // </div>
 
+    const [name, setName] = useState("name");
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setName("");
+        console.log("Form submitted successfully")
+    }
     const { theme } = useTheme();
     return (
       <div
@@ -95,6 +102,15 @@ function App() {
       >
         <Header />
         <Page />
+        <form onSubmit={handleSubmit}>
+            <fieldset>
+                <div className="field">
+                    <label htmlFor="name">Name : </label>
+                    <input id="name" type="text" placeholder="Name" name="name" value={name} onChange={e => setName(e.target.value)}/>
+                </div>
+                <button disabled={!name} type="submit">Submit</button>
+            </fieldset>
+        </form>
       </div>
   );
 };
